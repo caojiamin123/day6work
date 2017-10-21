@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>work1return</title>
+	</head>
+	<body>
+	   <input type="button" id="btn" value="按钮" />
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obtn=document.querySelector("#btn");
+			obtn.onclick=show();
+			function show(){
+				return function(){
+					alert("1");
+				}
+			}
+		}
+	</script>
+</html>

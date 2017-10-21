@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work34模拟广告</title>
+		<style type="text/css">
+			#ad{
+				width:100%;
+				height:300px;
+				background:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ad"></div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var odiv=document.getElementById("ad");
+			
+			setTimeout(function(){
+				odiv.style.display="none";
+			},3000)
+		}
+	</script>
+</html>

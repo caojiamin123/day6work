@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work18关于i值的问题1</title>
+	</head>
+	<body>
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+		<input type="button" value="按钮3" />
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var abtn=document.getElementsByTagName("input");
+			for(var i=0;i<abtn.length;i++){
+					alert(i);  //0,1,2
+			}
+			alert(i);
+		}
+	</script>
+</html>

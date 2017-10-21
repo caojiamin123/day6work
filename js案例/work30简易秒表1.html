@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work30简易秒表1</title>
+	</head>
+	<body>
+		<input type="text" value="" id="txt" />
+		<input type="button" value="开始" id="btn"/>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var otxt=document.getElementById("txt");
+			var obtn=document.getElementById("btn");
+			var count=0;
+			obtn.onclick=function(){
+				setInterval(function(){
+					count++;
+					otxt.value=count/60+":"+count%60;
+				},100)
+			}
+		}
+	</script>
+</html>

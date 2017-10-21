@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work43自执行函数-选项卡4</title>
+		<style type="text/css">
+			#box{
+				margin:50px auto;
+				width:310px;
+			}
+			#box div{
+				width:300px;
+				height:300px;
+				border:#000 1px solid;
+				display:none;
+				font-size:50px;
+				line-height:300px;
+				text-align:center;
+			}
+			
+			.on{
+				background:red;
+				color:#fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<input type="button" value="按钮1" class="on"/>
+			<input type="button" value="按钮2" />
+			<input type="button" value="按钮3" />
+			<div style="display: block;">div 1</div>
+			<div>div 2</div>
+			<div>div 3</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obox=document.getElementById("box");
+			var abtn=obox.getElementsByTagName("input");
+			var adiv=obox.getElementsByTagName("div");
+			
+			for(var i=0;i<abtn.length;i++){
+				//(i);  //0,1,2
+				(function (index){
+					abtn[i].onclick=function(){
+						for(var i=0;i<abtn.length;i++){
+							abtn[i].className="";
+							adiv[i].style.display="none";
+						}
+						this.className="on";
+						adiv[index].style.display="block";
+					}
+				})(i);
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work14点击按钮弹出1</title>
+	</head>
+	<body>
+		<input type="button" value="按钮1" id="btn1"/>
+		<input type="button" value="按钮2" id="btn2"/>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obtn=document.getElementById("btn1");
+			obtn.onclick=function(){
+				alert(obtn.value);
+			}
+			var obtn=document.getElementById("btn2");
+			obtn.onclick=function(){
+				alert(obtn.value);
+			}
+		}
+	</script>
+</html>

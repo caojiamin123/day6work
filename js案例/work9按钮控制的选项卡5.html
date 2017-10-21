@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>work9按钮控制的选项卡5</title>
+		<style type="text/css">
+			#box{
+				margin:50px auto;
+				width:310px;
+			}
+			#box div{
+				width:300px;
+				height:300px;
+				border:#000 1px solid;
+				display:none;
+				font-size:50px;
+				line-height:300px;
+				text-align:center;
+			}
+			.on{
+				background:red;
+				color:#fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<a href="javascript:;" id="prev">←</a>
+		    <input type="button" value="按钮1" class="on" />
+		    <input type="button" value="按钮2" />
+		    <input type="button" value="按钮3" />
+		    <a href="javascript:;" id="next">→</a>
+		    <div style="display:block;">div 1</div>
+		    <div>div 2</div>
+		    <div>div 3</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var obox=document.getElementById("box");
+			var oprev=document.getElementById("prev");
+			var onext=document.getElementById("next");
+			var abtn=obox.getElementsByTagName("input");
+			var adiv=obox.getElementsByTagName("div");
+			var inow=0;
+			for (var i=0;i<abtn.length;i++) {
+				abtn[i].index=i;
+				abtn[i].onclick=function(){
+					for(var i=0;i<abtn.length;i++){
+						abtn[i].className="";
+						adiv[i].style.display="none";
+					}
+					this.className="on";
+					adiv[this.index].style.display="block";
+				}
+			}
+			
+			onext.onclick=function(){
+				inow++;
+				if(inow==abtn.length){
+					inow=0;
+				}
+				for(var i=0;i<abtn.length;i++){
+					abtn[i].className="";
+					adiv[i].style.display="none";
+				}
+				abtn[inow].className="on";
+				adiv[inow].style.display="block";
+			}
+		}
+	</script>
+</html>
